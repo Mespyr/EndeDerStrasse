@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstdint>
 #include "util.h"
+#include "texture.h"
 
 class Window {
 private:
@@ -21,6 +22,7 @@ public:
 
 	int32_t init();
 	void clear();
+	void render(uint32_t x, uint32_t y, Texture texture);
 	void display();
 	void set_pixel(uint32_t x, uint32_t y, int32_t color);
 

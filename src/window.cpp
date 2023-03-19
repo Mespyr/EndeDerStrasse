@@ -1,4 +1,5 @@
 #include "include/window.h"
+#include <cstdint>
 
 Window::~Window() {
 	SDL_DestroyWindow(window);
@@ -40,6 +41,18 @@ int32_t Window::init() {
 
 void Window::clear() {
 	memset(pixels, 0, sizeof(pixels));
+}
+
+void Window::render(uint32_t x, uint32_t y, Texture texture) {
+	int32_t px = 0, py = 0;
+	for (int32_t p_pos = 0; p_pos < texture.width * texture.height; p_pos++) {
+		set_pixel(x + px, y + py, texture.data[p_pos]);
+		if (px == texture.width - 1) {
+			px = 0;
+			py += 1;
+		}
+		else px += 1;
+	}
 }
 
 void Window::display() {
