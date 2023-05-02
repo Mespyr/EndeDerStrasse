@@ -1,3 +1,1 @@
-# Ende der Straße
-
-*Ende der Straße* will be an retro-style 2D topdown shooter with some horror aspects.
+A doom-style 3d renderer using SDL2. Probably not gonna work on this for a while cuz I'm lazy.
